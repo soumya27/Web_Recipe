@@ -24,6 +24,7 @@ export class RecipeService {
    * @param recipe Recipe
    */
   addRecipe(recipe: Recipe): Observable<Recipe> {
+    //todo work on the image path
     // recipe.image = recipe.image.replace("C:\\fakepath\\","../../assets/userImages/");
     return this.httpClient.post<Recipe>(this.recipeResourceURL, recipe);
   }

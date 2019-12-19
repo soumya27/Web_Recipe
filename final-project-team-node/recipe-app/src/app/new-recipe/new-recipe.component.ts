@@ -35,7 +35,6 @@ export class NewRecipeComponent implements OnInit {
     });
   }
 
-
   addIngredient(){
     this.ingredientsList.push(new Ingredients("",""));
   }
@@ -45,6 +44,7 @@ export class NewRecipeComponent implements OnInit {
   }
 
   saveRecipe(){
+    //todo make this efficient
     let recipeAttributes = ["recipeTitle", "recipeCategory", "recipeserving",
       "recipeCalories", "recipeTime", "recipeImage"];
     let newRecipe: Recipe;
@@ -57,25 +57,18 @@ export class NewRecipeComponent implements OnInit {
     let time = (<HTMLInputElement>document.getElementById(recipeAttributes[4])).value;
     let image = (<HTMLInputElement>document.getElementById(recipeAttributes[5])).value;
 
-    // fetch ingredients
     let ingredients = document.getElementsByClassName("ingredients-container");
-    console.log(ingredients.length);
     // @ts-ignore
     for(let ingredient of ingredients){
       listIngredients.push(new Ingredients(ingredient.children[0].value,ingredient.children[1].value));
     }
-    console.log(listIngredients);
-    // fetch steps
+
     let steps = document.getElementsByClassName("steps-container");
-    console.log(steps.length);
     // @ts-ignore
     for(let step of steps){
       listSteps.push(new Steps(step.children[0].value));
     }
-    console.log(listSteps);
-
     newRecipe = new Recipe(title,category,serving,listSteps,calories,time,listIngredients,"soumya",image);
-
     this.recipeService.addRecipe(newRecipe).subscribe(
       newRecipe => {
         //  data is the added recipe object returned
