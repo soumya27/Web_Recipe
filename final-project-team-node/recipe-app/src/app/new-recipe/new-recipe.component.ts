@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 
 import { RecipeService } from '../services/recipe.service';
 import {Recipe} from "../models/recipe.model";
+import {Ingredients} from "../models/ingredient.model";
+import {Steps} from "../models/steps.model";
 import {DataService} from "../services/data.service";
 
 @Component({
@@ -13,6 +15,9 @@ import {DataService} from "../services/data.service";
 export class NewRecipeComponent implements OnInit {
 
   private recipe: Recipe;
+
+  private ingredientsList: Array<Ingredients> = [new Ingredients("","")];
+  private stepsList: Array<Steps> = [new Steps("")];
 
   // Using category list to build the display
   categories = ["Asian", "BBQ", "Beverages",
@@ -30,8 +35,17 @@ export class NewRecipeComponent implements OnInit {
     });
   }
 
+
+  addIngredient(){
+    this.ingredientsList.push(new Ingredients("",""));
+  }
+
+  addSteps(){
+    this.stepsList.push(new Steps(""));
+  }
+
   // Routing to recipe-details page once recipe is successfully created
-  RecipeDetails() {
+  recipeDetails() {
     this.router.navigate(['recipe-details']);
   }
 
