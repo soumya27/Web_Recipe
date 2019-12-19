@@ -17,6 +17,7 @@ export class RecipeDisplayComponent implements OnInit {
    *  Loading all the recipes
    */
   ngOnInit() {
+    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = 'none';
 
     this.recipeService.getRecipes().subscribe(
       recipes => {

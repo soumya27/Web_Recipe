@@ -15,6 +15,7 @@ import {DataService} from "../services/data.service";
 export class NewRecipeComponent implements OnInit {
 
   private recipe: Recipe;
+  private imageUrl : string = 'url("https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/1027892/910/606/m2/fpnw/wm1/jhy9bzssjwkt5o7fxskrktvwl694hyaz0seetflsve4uzxwz2fwo5cp2kveuxx1i-.jpg?1456439150&amp;s=5b1f2fff414d6202341d5f151341a221")';
 
   private ingredientsList: Array<Ingredients> = [new Ingredients("","")];
   private stepsList: Array<Steps> = [new Steps("")];
@@ -29,7 +30,14 @@ export class NewRecipeComponent implements OnInit {
               private data: DataService) {
   }
 
+  updateWrapperBg(){
+    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = this.imageUrl ;
+    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundRepeat = 'no-repeat';
+    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundSize = 'cover';
+  }
+
   ngOnInit() {
+    this.updateWrapperBg();
     this.data.currentRecipe.subscribe((data: Recipe) => {
       this.recipe = data;
     });
@@ -51,7 +59,7 @@ export class NewRecipeComponent implements OnInit {
     let listIngredients: Array<Ingredients> = [];
     let listSteps: Array<Steps>= [];
     let title = (<HTMLInputElement>document.getElementById(recipeAttributes[0])).value;
-    let category =(<HTMLInputElement>document.getElementById(recipeAttributes[1])).value;
+    let category =(<HTMLInputElement>document.getElementById(recipeAttributes[1])).value.toLowerCase();
     let serving = (<HTMLInputElement>document.getElementById(recipeAttributes[2])).value;
     let calories = (<HTMLInputElement>document.getElementById(recipeAttributes[3])).value;
     let time = (<HTMLInputElement>document.getElementById(recipeAttributes[4])).value;

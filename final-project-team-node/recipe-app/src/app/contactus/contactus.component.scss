@@ -1,6 +1,7 @@
-.container{
-  color: black;
+.container-fluid{
+  color: whitesmoke;
   padding: 40px 0;
+  background-color: rgba(0,0,0,0.7);
 }
 
 h1{
@@ -66,7 +67,7 @@ span{
   padding-bottom: 5%;
   span{
     display: inline-block;
-    color: black;
+    color: whitesmoke;
     font-size: 20px;
     padding-left: 5%;
     width: 100%;

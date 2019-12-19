@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../services/recipe.service';
 import { ZomatoService } from '../zomato.service';
 import { Router } from '@angular/router';
-import { Recipe, Ingredients } from '../models/recipe.model';
+import { Recipe } from '../models/recipe.model';
+import {Ingredients} from "../models/ingredient.model";
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -31,16 +32,12 @@ export class RecipeDetailsComponent implements OnInit {
   ngOnInit() {
     this.data.currentRecipe.subscribe((data : Recipe) => {
       this.recipe = data;
-      console.log("asd" +data);
     });
 
+    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = 'none';
   }
 
-  // getRestaurants(){
-  //   this.zomatoService.getRestaurants().subscribe((value) => {
-  //     console.log(value);
-  //   })
-  // }
+  // getRes
 
   getRestaurantList(category){
     this.router.navigate(['restaurants', category]);
