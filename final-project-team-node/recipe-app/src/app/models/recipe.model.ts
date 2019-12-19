@@ -1,29 +1,7 @@
 /**
- * Ingredients Model Interface
- */
-export interface Ingredients {
-  id: string;
-  name: string;
-  amount: string;
-}
-
-export interface Steps {
-  id: string;
-  steps: string;
-}
-
-export interface Comments {
-    id: String;
-    name: String;
-    emailAddress: String;
-    comment: String;
-    rating: String;
-}
-
-/**
  * Recipe Creation Form Model
  */
-export interface Recipe {
+export class Recipe {
     id: string;
     title: string;
     category: string;
