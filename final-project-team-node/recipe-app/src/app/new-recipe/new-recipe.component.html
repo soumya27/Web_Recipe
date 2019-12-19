@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="heading">Add New Recipe</h1>
-  <form>
+  <form (ngSubmit)="saveRecipe()">
     <div class="form-group">
       <label for="recipeTitle">Title</label>
       <input type="text" id="recipeTitle" placeholder="Enter Recipe Title">
