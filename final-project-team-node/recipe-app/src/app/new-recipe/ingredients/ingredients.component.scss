@@ -1,0 +1,23 @@
+.container-fluid{
+  padding: 0;
+}
+.name, .amount{
+  padding: 1%;
+  width: 48%;
+}
+
+.far{
+  position: relative;
+  width: 3%;
+  top:5px;
+  left: 10px;
+}
+
+.amount{
+  margin-left: 2px;
+}
+
+input {
+  border: none;
+  outline:none;
+}

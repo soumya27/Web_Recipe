@@ -1,0 +1,21 @@
+.container-fluid {
+  padding: 0;
+}
+
+.steps {
+  display: inline-block;
+  width: 96%;
+}
+
+.far {
+  position: relative;
+  width: 4%;
+  bottom: 30px;
+  left: 10px;
+}
+
+textarea {
+  border: none;
+  outline:none;
+  resize: none;
+}

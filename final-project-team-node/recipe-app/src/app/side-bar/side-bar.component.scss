@@ -1,0 +1,78 @@
+//.sidebar {
+//    z-index: 9999;
+//    background-color: #4182ad;
+//    height: 100%;
+//    overflow: auto !important;
+//    padding: 0 !important;
+//    position: fixed;
+//    width: 40px;
+//    color: #FFF;
+//    left: 0;
+//    transition: all ease 0.4s;
+//    -moz-transition: all ease 0.4s;
+//    -webkit-transition: all ease 0.4s;
+//}
+//
+//.sidebar:hover {
+//    width: 220px;
+//}
+//
+//body.collapsed-sidebar .sidebar-menu h3 b, .sidebar:hover .sidebar-menu h3 b {
+//    display: inline-block;
+//    margin-left: 40px;
+//}
+//
+//body.collapsed-sidebar .sidebar-list li, .sidebar:hover .sidebar-list li {
+//    display: block;
+//}
+//
+//.collapse-sidebar {
+//    z-index: 9990;
+//    position: relative;
+//    color: #FFF;
+//}
+//
+//    .sidebar-menu h3 {
+//        font-size: 14px;
+//        position: relative;
+//        min-width: 220px;
+//        border-bottom: 1px solid white;;
+//    }
+//
+//        .sidebar-menu h3 a {
+//            color: #FFF;
+//            text-decoration: none;
+//            display: block;
+//            // background: url(../images/trans-sep.png) repeat-x bottom;
+//            min-height: 48px;
+//            line-height: 1;
+//            padding: 16px 22px 16px 0px;
+//            outline: none;
+//            transition: all 0.25s linear;
+//            -moz-transition: all 0.25s linear;
+//            -webkit-transition: all 0.25s linear;
+//        }
+//
+//    .sidebar-menu b {
+//        font-family: "OpenSansRegular", Arial;
+//    }
+//
+//.sidebar-menu h3 i {
+//    display: inline-block;
+//    position: absolute;
+//    top: 0;
+//    text-align: center;
+//    left: 0px;
+//    margin: auto;
+//    width: 38px;
+//    height: 48px;
+//    line-height: 48px;
+//}
+//
+//.sidebar-menu h3 b, .sidebar-menu h3 span {
+//    display: none;
+//}
+//
+//a{
+//    cursor: pointer;
+//}

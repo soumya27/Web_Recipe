@@ -1,0 +1,6 @@
+<app-recipe-search (recipes)="updateResult($event)"></app-recipe-search>
+<div class="container-fluid">
+  <div class="recipe-holder" *ngFor="let recipe of recipes">
+    <app-recipe-tile [recipe]="recipe" (updateRecipeListEvent)="updateResult($event)"></app-recipe-tile>
+  </div>
+</div>

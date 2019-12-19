@@ -1,0 +1,39 @@
+// #primary-nav {
+//     background-color: rgb(2, 9, 65);
+// }
+@import "../../scss/variables.scss";
+
+.header {
+  height: 100px;
+  background-color: $main-color;
+  position: sticky;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+button{
+  top: 25%;
+  //bottom: 50% ;
+}
+
+.user{
+  float: right;
+  position: relative;
+  top:25%;
+  right: 2%;
+  color: whitesmoke;
+}
+
+.options{
+  margin-top: 1%;
+  float: left;
+  color: whitesmoke;
+}
+
+.logo{
+  position: relative;
+  left: 43%;
+  top:25%;
+  color: whitesmoke;
+  font-size: 30px;
+}

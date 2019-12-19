@@ -1,0 +1,8 @@
+<div class="container-fluid">
+  <div class="options">
+    <a name="all" class="current" (click)="updateDisplay($event)">All</a>
+  </div>
+  <div class="options" *ngFor="let category of categories">
+    <a name={{category}} (click)="updateDisplay($event)">{{category}}</a>
+  </div>
+</div>

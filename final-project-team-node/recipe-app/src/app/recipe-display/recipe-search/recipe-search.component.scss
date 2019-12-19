@@ -1,0 +1,37 @@
+.container-fluid{
+  //background-color: rgba(1,4,25,0.8);
+  margin-bottom: 2%;
+}
+
+a{
+  text-decoration: none;
+  display: inline;
+}
+
+.options {
+  margin: 1%;
+  border-radius:6px;
+  display:inline-block;
+  cursor:pointer;
+  font-family: Arial, serif;
+  font-size:20px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+}
+
+.options:hover {
+  background: #020941;
+  color: whitesmoke;
+}
+
+.current {
+  padding: 8px 30px;
+  border-radius:6px;
+  font-weight:bold;
+  background: #020941;
+  color: whitesmoke;
+}
+
+
+

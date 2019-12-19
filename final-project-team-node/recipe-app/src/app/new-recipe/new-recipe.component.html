@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="heading">Add New Recipe</h1>
+  <form>
+    <div class="form-group">
+      <label for="recipeTitle">Title</label>
+      <input type="text" id="recipeTitle" placeholder="Enter Recipe Title">
+    </div>
+    <div class="form-group">
+      <label for="recipeCategory">Category</label>
+      <select id="recipeCategory" class="form-control">
+        <option *ngFor="let category of categories">{{category}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="recipeserving">Serving</label>
+      <input type="text" id="recipeserving" placeholder="Enter Servings">
+    </div>
+    <!--    ingredients -->
+    <div class="form-group">
+      <label class="recipeIngredients">Required Ingredients</label>
+<!--      On click of icon add new ingredient component-->
+      <i class="fas fa-plus-circle fa-2x"></i>
+      <app-ingredients></app-ingredients>
+    </div>
+    <!--    Steps -->
+    <div class="form-group">
+      <label class="recipeSteps">Preparation Steps</label>
+      <!--      On click of icon add new steps component-->
+      <i class="fas fa-plus-circle fa-2x"></i>
+      <app-steps></app-steps>
+    </div>
+    <div class="form-group">
+      <label for="recipeCalories">Calories</label>
+      <input type="text" id="recipeCalories" placeholder="Enter Calories">
+    </div>
+    <div class="form-group">
+      <label for="recipeTime">Preparation Time</label>
+      <input type="text" id="recipeTime" placeholder="Enter Preparation Time">
+    </div>
+    <div class="form-group">
+      <label for="recipeImage">Upload Image</label>
+      <input type="file" id="recipeImage" class="upload" accept="image/*">
+    </div>
+    <button type="submit" id="submitButton"> Save </button>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="container-fluid header">
+  <i class="fas fa-bars fa-3x options" mat-button [matMenuTriggerFor]="menu"></i>
+  <mat-menu #menu="matMenu" yPosition="above">
+    <button mat-menu-item (click)="onAdd()">Add new recipe</button>
+    <button mat-menu-item (click)="onSearch()">Search</button>
+    <button mat-menu-item (click)="onAboutUs()">About us</button>
+  </mat-menu>
+
+  <span class="logo"> What Do I Eat? </span>
+
+<!--  <button class ="dropdown-menu user" mat-button [matMenuTriggerFor]="user">Profile</button>-->
+  <i class="far fa-user-circle fa-3x user" mat-button [matMenuTriggerFor]="user"></i>
+  <mat-menu #user="matMenu" yPosition="above">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item (click)="onLogout()">{{state}}</button>
+  </mat-menu>
+</div>

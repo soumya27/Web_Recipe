@@ -1,0 +1,15 @@
+<div class="container" [class.recipe]="classObject.recipe" (click)="setCurrentRecipe()">
+  <div class="card">
+    <p class="recipe-title">{{recipe.title}}</p>
+    <!--fetch the src from the recipe object-->
+    <img class="class-img-top" [attr.src]="recipe.image" alt="image for recipe">
+    <!--fetch these details from the recipe object-->
+    <i class="far fa-clock"></i><p class="recipe-time">{{recipe.time}}</p>
+    <p class="recipe-category">{{recipe.category}}</p>
+    <i class="fas fa-arrow-right"></i>
+  </div>
+</div>
+<div *ngIf="recipe.author === user" class="user-options">
+  <i class="far fa-trash-alt fa-lg" (click)="deleteRecipe()"></i>
+  <i class="far fa-edit fa-lg" (click)="editRecipe()" ></i>
+</div>

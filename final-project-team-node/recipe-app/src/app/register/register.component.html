@@ -1,0 +1,79 @@
+<!--&lt;!&ndash;-->
+<!--  todo 1. form validation-->
+<!--       2. Display error-->
+<!--&ndash;&gt;-->
+<!--<div class="main-login">-->
+<!--    <section class="login-block">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-3"></div>-->
+<!--                <div class="col-md-6 login-sec">-->
+<!--                    <h2 class="text-center">Register</h2>-->
+<!--                    <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onUserRegister()">-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="firstname" class="text-uppercase">Firstname</label>-->
+<!--                            <input id="firstname" type="text" class="form-control" placeholder="" name="firstname"-->
+<!--                                formControlName="firstname" minlength="3" required>-->
+<!--                            <div *ngIf="registerForm.controls.firstname.errors && (registerForm.controls.firstname.dirty || registerForm.controls.firstname.touched)"-->
+<!--                                class="form-error">-->
+<!--                                <div *ngIf="registerForm.controls.firstname.errors.required" class="form-error">-->
+<!--                                    Firstname is required</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="lastname" class="text-uppercase">Lastname</label>-->
+<!--                            <input id="lastname" type="text" class="form-control" placeholder="" name="lastname"-->
+<!--                                formControlName="lastname">-->
+<!--                            <div *ngIf="registerForm.controls.lastname.errors && (registerForm.controls.lastname.dirty || registerForm.controls.lastname.touched)"-->
+<!--                                class="form-error">-->
+<!--                                <div *ngIf="registerForm.controls.lastname.errors.required" class="form-error">-->
+<!--                                    Lastname is required</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="username" class="text-uppercase">Username</label>-->
+<!--                            <input id="username" type="email" class="form-control" placeholder="" name="username"-->
+<!--                                formControlName="username" required>-->
+<!--                            <div *ngIf="registerForm.controls.username.errors && (registerForm.controls.username.dirty || registerForm.controls.username.touched)"-->
+<!--                                class="form-error">-->
+<!--                                <div *ngIf="registerForm.controls.username.errors.required" class="form-error">-->
+<!--                                    Email is required</div>-->
+<!--                                <div *ngIf="registerForm.controls.username.errors.pattern">Enter a valid Email-->
+<!--                                    Address-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <label for="password" class="text-uppercase">Password</label>-->
+<!--                            <input id="password" type="password" class="form-control" placeholder="" name="password"-->
+<!--                                formControlName="password" required>-->
+<!--                            <div *ngIf="registerForm.controls.password.errors && (registerForm.controls.password.dirty || registerForm.controls.password.touched)"-->
+<!--                                class="form-error">-->
+<!--                                <div *ngIf="registerForm.controls.password.errors.required" class="form-error">-->
+<!--                                    Password is required</div>-->
+<!--                                <div *ngIf="registerForm.controls.password.errors.minlength" class="form-error">-->
+<!--                                    Password should be of atleast 6 characters</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="form-check form-check-inline">-->
+<!--                            <input id="male" type="radio" class="form-check-input" name="inlineRadioOptions"-->
+<!--                                value="male" formGroupName="gender" required>-->
+<!--                            <label class="form-check-label" for="male">Male</label>-->
+<!--                        </div>-->
+<!--                        <div class="form-check form-check-inline">-->
+<!--                            <input id="female" type="radio" class="form-check-input" name="inlineRadioOptions"-->
+<!--                                value="female" required>-->
+<!--                            <label class="form-check-label" for="female">Female</label>-->
+<!--                        </div>-->
+<!--                        <div class="row">-->
+<!--                            <button type="submit" class="btn btn-primary float-left">Submit</button>-->
+<!--                            <button type="button" class="login btn btn-primary" (click)="openLogin()">Login</button>-->
+<!--                        </div>-->
+
+<!--                    </form>-->
+<!--                </div>-->
+<!--                <div class="col-md-3"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--</div>-->
