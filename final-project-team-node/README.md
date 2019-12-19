@@ -34,7 +34,7 @@ To start MongoDB use command -
 Mongo
 ```
 
-### Quick Look
+### Quick Look [Before my Edits]
 
 Login page 
 
@@ -46,7 +46,7 @@ Search page
 
 Find Restaurants 
 
-Login page 
+Find Restaurants page 
 
 ![Image of find](./images/find.png)
 
