@@ -7,8 +7,10 @@
   height: 100px;
   background-color: $main-color;
   position: sticky;
+  top: 0; /* required */
   padding-left: 3%;
   padding-right: 3%;
+  z-index: 10;
 }
 
 button{
