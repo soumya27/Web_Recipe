@@ -12,4 +12,10 @@ export class StepsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDelete(event: Event) {
+    const target: any = event.target;
+    const parentNode: HTMLElement = target.parentNode;
+    parentNode.remove();
+  }
+
 }

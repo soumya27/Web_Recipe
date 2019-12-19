@@ -6,32 +6,16 @@ import { Component, OnInit} from '@angular/core';
   styleUrls: ['./ingredients.component.scss']
 })
 export class IngredientsComponent implements OnInit {
-  items = [];
-  listIngredientName: any = [];
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onDelete(i) {
-    console.log("Inside onDelete()");
-    this.items.splice(i,1);
+  onDelete(event: Event) {
+    const target: any = event.target;
+    const parentNode: HTMLElement = target.parentNode;
+    parentNode.remove();
   }
 
-  public loadMyChildComponent() {
-    this.items = [...this.items, this.items.length]
-    console.log(this.items);
-  }
-
-  onAdd(i) {
-    console.log(i);
-    let idName = "name"+i;
-    let idAmount = "amount"+i;
-    console.log('id',idName);
-    let ingredientName = (<HTMLInputElement>document.getElementById(idName)).value;
-    console.log(ingredientName);
-    let amount = (<HTMLInputElement>document.getElementById(idAmount)).value;
-    console.log(amount);
-  }
 }
