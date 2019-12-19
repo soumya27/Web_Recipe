@@ -5,8 +5,7 @@ export class Ingredients {
   id: string;
   name: string;
   amount: string;
-  constructor(id: string,name: string,amount: string){
-    this.id = id;
+  constructor(name: string,amount: string){
     this.name = name;
     this.amount = amount;
   }

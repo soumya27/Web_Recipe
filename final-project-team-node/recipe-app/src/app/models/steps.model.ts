@@ -4,8 +4,7 @@
 export class Steps {
   id: string;
   steps: string;
-  constructor(id:string, steps:string){
-    this.id = id;
+  constructor(steps:string){
     this.steps = steps;
   }
 }
