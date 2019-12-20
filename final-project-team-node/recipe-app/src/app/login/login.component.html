@@ -1,0 +1,22 @@
+<div class="container">
+  <form class="login-form" (ngSubmit)="onUserLogin()" [formGroup]="user">
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Email" formControlName="email"
+             [errorStateMatcher]="matcher" required>
+      <mat-error *ngIf="user.controls['email'].hasError('required')">
+        Email is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Password" formControlName="password"
+             [errorStateMatcher]="matcher" required >
+      <mat-error *ngIf="user.controls['password'].hasError('required')">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+    <button id="submitButton" mat-raised-button>Login</button>
+
+    <a mat-raised-button >Forgot Password</a>
+    <a mat-raised-button >Register</a>
+  </form>
+</div>
