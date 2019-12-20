@@ -16,8 +16,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class LoginComponent implements OnInit {
 
-  private imageUrl =
-    'url("https://cdn.pixabay.com/photo/2016/02/19/11/30/shrimp-1209744_960_720.jpg")';
+  private imageUrl = 'url("https://cdn.pixabay.com/photo/2016/02/19/11/30/shrimp-1209744_960_720.jpg")';
+
   user = new FormGroup({
     email: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required])
@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.updateWrapperBg();
   }
-
 
   /*
    * Method to verify the login credentials
