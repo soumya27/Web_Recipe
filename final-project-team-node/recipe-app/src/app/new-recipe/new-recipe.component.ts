@@ -1,11 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { RecipeService } from '../services/recipe.service';
 import {Recipe} from "../models/recipe.model";
 import {Ingredients} from "../models/ingredient.model";
 import {Steps} from "../models/steps.model";
 import {DataService} from "../services/data.service";
+import {ErrorStateMatcher} from "@angular/material/core";
+import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-new-recipe',
@@ -29,6 +38,14 @@ export class NewRecipeComponent implements OnInit {
               private router: Router,
               private data: DataService) {
   }
+
+  recipeForm = new FormGroup({
+    title: new FormControl('', [Validators.required]),
+    category: new FormControl('', [Validators.required]),
+    serving: new FormControl('', [Validators.required])
+  });
+
+  matcher = new MyErrorStateMatcher();
 
   updateWrapperBg(){
     (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = this.imageUrl ;
@@ -76,10 +93,11 @@ export class NewRecipeComponent implements OnInit {
     for(let step of steps){
       listSteps.push(new Steps(step.children[0].value));
     }
+
     newRecipe = new Recipe(title,category,serving,listSteps,calories,time,listIngredients,"soumya",image);
     this.recipeService.addRecipe(newRecipe).subscribe(
       newRecipe => {
-        //  data is the added recipe object returned
+        //  setting the currentRecipe to the newly created recipe
         this.data.setCurrentRecipe(newRecipe);
         //  using data service set and navigate to recipesDetail page
         this.recipeDetails();

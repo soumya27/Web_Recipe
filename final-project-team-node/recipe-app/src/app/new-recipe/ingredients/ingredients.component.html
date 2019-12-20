@@ -1,5 +1,26 @@
-<div class="container-fluid ingredients-container" >
-  <input type="text" class="name" placeholder="Name of Ingredient">
-  <input type="text" class="amount" placeholder="Amount">
-  <i class="far fa-trash-alt fa-2x" (click)="onDelete($event)" ></i>
+<div class="container-fluid ingredients-container">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Name of Ingredient" [formControl]="formControl"
+           [errorStateMatcher]="matcher" [(ngModel)]="name" required>
+    <mat-error *ngIf="formControl.hasError('required')">
+      Please Enter Name
+    </mat-error>
+    <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Quantity of Ingredient" [formControl]="formControl"
+           [errorStateMatcher]="matcher" [(ngModel)]="amount" required>
+    <mat-error *ngIf="formControl.hasError('required')">
+      Please Enter Quantity
+    </mat-error>
+    <button mat-button *ngIf="amount" matSuffix mat-icon-button aria-label="Clear" (click)="amount=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <i class="far fa-trash-alt fa-2x" (click)="onDelete($event)"></i>
 </div>

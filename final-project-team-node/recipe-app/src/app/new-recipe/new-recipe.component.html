@@ -1,50 +1,66 @@
 <div class="container">
   <h1 class="heading">Add New Recipe</h1>
-  <form (ngSubmit)="saveRecipe()">
-    <div class="form-group">
-      <label for="recipeTitle">Title</label>
-      <input type="text" id="recipeTitle" placeholder="Enter Recipe Title">
-    </div>
-    <div class="form-group">
-      <label for="recipeCategory">Category</label>
-      <select id="recipeCategory" class="form-control">
-        <option *ngFor="let category of categories">{{category}}</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="recipeserving">Serving</label>
-      <input type="text" id="recipeserving" placeholder="Enter Servings">
-    </div>
-    <!--    ingredients -->
+  <form (ngSubmit)="saveRecipe()" [formGroup]="recipeForm" >
+    <mat-form-field class="example-full-width form-group">
+      <input matInput placeholder="Title" formControlName="title"
+             [errorStateMatcher]="matcher" required>
+      <mat-error *ngIf="recipeForm.controls['title'].hasError('required')">
+        Please Enter Recipe title
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width form-group">
+      <mat-label>Select one category</mat-label>
+      <mat-select formControlName="category" required>
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="recipeForm.controls['category'].hasError('required')">
+        Please choose a category
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width form-group">
+      <input matInput placeholder="Servings" formControlName="serving"
+             [errorStateMatcher]="matcher" required>
+      <mat-error *ngIf="recipeForm.controls['serving'].hasError('required')">
+        Please Enter Serving
+      </mat-error>
+    </mat-form-field>
+
     <div class="form-group" >
       <label class="recipeIngredients">Required Ingredients</label>
-<!--      On click of icon add new ingredient component-->
+      <!--On click of icon add new ingredient component-->
       <i class="fas fa-plus-circle fa-2x" (click)="addIngredient()"></i>
       <div *ngFor="let ingredients of ingredientsList">
         <app-ingredients></app-ingredients>
       </div>
     </div>
-    <!--    Steps -->
+
+    <!-- Steps -->
     <div class="form-group">
       <label class="recipeSteps">Preparation Steps</label>
-      <!--      On click of icon add new steps component-->
+      <!-- On click of icon add new steps component-->
       <i class="fas fa-plus-circle fa-2x" (click)="addSteps()"></i>
       <div *ngFor="let steps of stepsList">
       <app-steps></app-steps>
       </div>
     </div>
-    <div class="form-group">
-      <label for="recipeCalories">Calories</label>
-      <input type="text" id="recipeCalories" placeholder="Enter Calories">
-    </div>
-    <div class="form-group">
-      <label for="recipeTime">Preparation Time</label>
-      <input type="text" id="recipeTime" placeholder="Enter Preparation Time">
-    </div>
+
+    <mat-form-field class="example-full-width form-group">
+      <input matInput placeholder="Calories" >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width form-group">
+      <input matInput placeholder="Preparation Time" >
+    </mat-form-field>
+
     <div class="form-group">
       <label for="recipeImage">Upload Image</label>
       <input type="file" id="recipeImage" class="upload" accept="image/*">
     </div>
-    <button type="submit" id="submitButton"> Save </button>
+
+    <button id="submitButton" mat-raised-button>Save</button>
   </form>
 </div>

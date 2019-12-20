@@ -3,21 +3,6 @@ h1 {
   padding: 1%;
 }
 
-select,input {
-  display: inline-block;
-  width: 80%;
-  padding: 1%;
-  border-radius: 5px;
-  border: none;
-  outline:none;
-}
-
-label{
-  display: inline-block;
-  width: 20%;
-  font-size: 20px;
-}
-
 button {
   padding: 1%;
   width: 120px;
@@ -32,3 +17,19 @@ button {
   border-radius: 3%;
 }
 
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+i {
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
