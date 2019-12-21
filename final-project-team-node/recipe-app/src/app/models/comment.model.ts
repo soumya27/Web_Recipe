@@ -7,4 +7,10 @@ export class Comments {
   emailAddress: string;
   comment: string;
   rating: string;
+  constructor(name: string, emailAddress: string, comment: string, rating: string){
+    this.name = name;
+    this.emailAddress = emailAddress;
+    this.comment = comment;
+    this.rating = rating;
+  }
 }
