@@ -1,23 +1,27 @@
 /**
  * Recipe Creation Form Model
  */
+import {Ingredients} from "./ingredient.model";
+import {Steps} from "./steps.model";
+import {Comments} from "./comment.model";
+
 export class Recipe {
     id: string;
     title: string;
     category: string;
     serving: string;
-    steps: Object;
+    steps: Array<Steps>;
     calories: string;
     time: string;
-    ingredients: Object;
+    ingredients: Array<Ingredients>;
     author: string;
     image: string;
     video: string;
     createdDate: string;
-    userComments: Object;
+    userComments: Array<Comments>;
     constructor(title: string,category: string,serving: string,
-                steps:Object, calories: string, time: string,
-                ingredients:Object,author: string,image: string){
+                steps:Array<Steps>, calories: string, time: string,
+                ingredients:Array<Ingredients>,author: string,image: string){
       this.author= author;
       this.time = time;
       this.calories= calories;
@@ -26,5 +30,6 @@ export class Recipe {
       this.title = title;
       this.steps = steps;
       this.ingredients = ingredients;
+      this.image = image;
     }
 }

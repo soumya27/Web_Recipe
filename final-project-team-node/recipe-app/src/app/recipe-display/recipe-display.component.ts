@@ -11,6 +11,7 @@ export class RecipeDisplayComponent implements OnInit {
 
   recipes: Array<Recipe>;
 
+
   constructor(private recipeService: RecipeService) { }
 
   /**
@@ -18,7 +19,6 @@ export class RecipeDisplayComponent implements OnInit {
    */
   ngOnInit() {
     (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = 'none';
-
     this.recipeService.getRecipes().subscribe(
       recipes => {
         this.recipes = recipes;

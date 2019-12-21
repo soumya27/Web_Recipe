@@ -1,9 +1,9 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {Recipe} from "../models/recipe.model";
-import {DataService} from "../services/data.service";
+import {Recipe} from "../../models/recipe.model";
+import {DataService} from "../../services/data.service";
 import {Router} from "@angular/router";
-import {RecipeService} from "../services/recipe.service";
-import {JwtService} from "../services/jwt.service";
+import {RecipeService} from "../../services/recipe.service";
+import {JwtService} from "../../services/jwt.service";
 
 @Component({
   selector: 'app-recipe-tile',
