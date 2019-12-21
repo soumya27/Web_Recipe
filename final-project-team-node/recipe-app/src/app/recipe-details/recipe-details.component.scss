@@ -1,24 +1,28 @@
+.fa-angle-left {
+  color: whitesmoke;
+  position: absolute;
+  left: 3%;
+}
+
+.description {
+  margin-top: 5%;
+  border: 1px solid black ;
+  border-radius: 5px;
+  padding: 2%;
+  .fa-user-circle {
+    color: black;
+  }
+  .position{
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+  }
+}
+
 img{
     max-width : 100%;
     max-height : 100%;
-}
-
-.bannerAdd{
-    background-image : url(../../assets/images/food.jpg);
-    background-size : cover;
-    background-repeat : no-repeat;
-    height : 500px;
-    width : 100%;
-}
-
-.recipe-type{
-    opacity: 0.8;
-    margin-top: 100px;
-    width: 15%;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    position: absolute;
 }
 
 table{
@@ -85,25 +89,22 @@ b {
   }
 
 
-.description {
-    padding: 0 100px;
-    color: white;
-    margin-top: 15px;
-    // border-radius: 5px;
-    // float: right;
-
-    .position {
-        background-color: darkblue;
-        min-width: 25px;;
-        margin: 0 auto;
-        padding: 5px;
-        color: white;
-    border-radius: 5px;
-
-    }
+.commentsSection {
+  background-color: rgb(240, 240, 240);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid black ;
 }
 
-.commentsSection{
-    background-color: rgb(240, 240, 240);
-    margin-top: 15px;
+
+.find {
+  padding: 10%;
+  border: 1px solid black;
+  span {
+    padding:10%;
+  }
+  button {
+    margin-left: 10%;
+    margin-top:3%;
+  }
 }
