@@ -7,6 +7,7 @@ import {Steps} from "../models/steps.model";
 import {DataService} from "../services/data.service";
 import {ErrorStateMatcher} from "@angular/material/core";
 import {FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
+import {changeBackground} from "../util/changeBackground";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -47,14 +48,8 @@ export class NewRecipeComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  updateWrapperBg(){
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = this.imageUrl ;
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundRepeat = 'no-repeat';
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundSize = 'cover';
-  }
-
   ngOnInit() {
-    this.updateWrapperBg();
+    changeBackground(this.imageUrl);
     this.data.currentRecipe.subscribe((data: Recipe) => {
       this.recipe = data;
     });

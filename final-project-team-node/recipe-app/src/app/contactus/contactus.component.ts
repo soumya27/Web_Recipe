@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { changeBackground } from "../util/changeBackground";
 
 @Component({
   selector: 'app-contactus',
@@ -11,14 +12,8 @@ export class ContactusComponent implements OnInit {
 
   private imageUrl = 'url("../../assets/images/contactus.jpg")';
 
-  updateWrapperBg(){
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = this.imageUrl ;
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundRepeat = 'no-repeat';
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundSize = 'cover';
-  }
-
   ngOnInit() {
-    this.updateWrapperBg();
+    changeBackground(this.imageUrl);
   }
 
 }

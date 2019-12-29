@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, Validators, FormGroupDirective, NgForm} from '@angular/forms';
 import {ErrorStateMatcher} from "@angular/material/core";
+import {Router} from "@angular/router";
+import {changeBackground} from "../util/changeBackground";
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -25,17 +27,15 @@ export class LoginComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  updateWrapperBg(){
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.background = this.imageUrl ;
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundRepeat = 'no-repeat';
-    (<HTMLInputElement>document.getElementsByClassName("wrapper").item(0)).style.backgroundSize = 'cover';
-  }
-
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
-    this.updateWrapperBg();
+    changeBackground(this.imageUrl);
+  }
+
+  onRegister() {
+    this.router.navigate(['register']);
   }
 
   /*
