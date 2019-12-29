@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { RecipeService } from '../services/recipe.service';
-import { Recipe } from '../models/recipe.model';
-import {Comments} from '../models/comment.model';
-import { DataService } from '../services/data.service';
+import { RecipeService } from '../../services/recipe.service';
+import { Recipe } from '../../models/recipe.model';
+import {Comments} from '../../models/comment.model';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-user-comments',

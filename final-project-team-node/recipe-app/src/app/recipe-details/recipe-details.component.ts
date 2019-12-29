@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../services/recipe.service';
 import { Router } from '@angular/router';
 import { Recipe } from '../models/recipe.model';
-import {Ingredients} from "../models/ingredient.model";
 import { DataService } from '../services/data.service';
 
 @Component({
