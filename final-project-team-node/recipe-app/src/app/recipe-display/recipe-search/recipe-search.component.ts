@@ -13,14 +13,11 @@ import {DataService} from "../../services/data.service";
 export class RecipeSearchComponent implements OnInit {
 
   // Using category list to build the display
-  categories = ["Asian", "BBQ", "Beverages",
+  categories = ["All","Asian", "BBQ", "Beverages",
     "Breakfast","Dessert","Fast Food","Healthy",
     "Indian","Italian","Mexican","My Recipes"];
 
   author: string;
-
-  // // todo fetch logged in user
-  // private author= "soumya";
 
   @Output() recipes = new EventEmitter<Array<Recipe>>();
 
@@ -44,17 +41,9 @@ export class RecipeSearchComponent implements OnInit {
    *  Searching recipes by category and emitting to the parent component
    *  @param event Event Object
    */
-  updateDisplay(event: Event) {
-    const target: any = event.target;
-    const category: string = target.name.toLowerCase();
+  updateDisplay(event) {
 
-    let anchorList = document.getElementsByTagName("a");
-    Object.keys(anchorList).forEach(function (key) {
-      anchorList[key].classList.remove("current");
-    });
-
-    //set this to current
-    target.classList.add("current");
+    const category: string = event.tab.textLabel.toLowerCase();
 
     // todo fetch user name
     if(category!=="my recipes"){

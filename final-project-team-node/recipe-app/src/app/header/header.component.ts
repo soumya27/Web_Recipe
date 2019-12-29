@@ -49,4 +49,8 @@ export class HeaderComponent implements OnInit {
   onAboutUs(){
     this.router.navigate(['contactus']);
   }
+
+  onUserProfile(){
+    this.router.navigate(['profile']);
+  }
 }

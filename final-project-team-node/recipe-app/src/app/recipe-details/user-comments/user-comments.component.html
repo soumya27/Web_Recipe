@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="container col-sm-12 form-div">
+        <form (submit)="onComment(commentForm,currentRate)" #commentForm="ngForm" class="form-horizontal" method="post"
+            name="recipeForm">
+          <mat-form-field class="example-full-width form-group">
+            <input id="username" matInput placeholder="Username" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width form-group">
+            <input id="email" matInput placeholder="Email ID" >
+          </mat-form-field>
+          <mat-form-field class="example-full-width form-group">
+            <textarea id="comment" matInput placeholder="Your comments are valuable... Please leave your footprints behind!"></textarea>
+          </mat-form-field>
+          <div class="rating">
+              <ngb-rating class="rating" [(rate)]="currentRate"></ngb-rating>
+              <pre class="rate"></pre>
+          </div>
+          <button mat-raised-button>Comment</button>
+        </form>
+    </div>
+</div>

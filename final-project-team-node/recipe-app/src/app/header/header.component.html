@@ -11,7 +11,7 @@
 <!--  <button class ="dropdown-menu user" mat-button [matMenuTriggerFor]="user">Profile</button>-->
   <i class="far fa-user-circle fa-3x user" mat-button [matMenuTriggerFor]="user"></i>
   <mat-menu #user="matMenu" yPosition="above">
-    <button mat-menu-item>Profile</button>
+    <button mat-menu-item (click)="onUserProfile()">Profile</button>
     <button mat-menu-item (click)="onLogout()">{{state}}</button>
   </mat-menu>
 </div>

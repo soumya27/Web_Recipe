@@ -1,8 +1,7 @@
-<div class="container-fluid">
-  <div class="options">
-    <a name="all" class="current" (click)="updateDisplay($event)">All</a>
-  </div>
-  <div class="options" *ngFor="let category of categories">
-    <a name={{category}} (click)="updateDisplay($event)">{{category}}</a>
+<div class="container-fluid" >
+  <div >
+    <mat-tab-group (selectedTabChange)="updateDisplay($event)">
+      <mat-tab *ngFor="let category of categories" label={{category}}></mat-tab>
+    </mat-tab-group>
   </div>
 </div>

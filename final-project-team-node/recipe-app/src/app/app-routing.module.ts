@@ -3,23 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { LoginComponent } from './login/login.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
-import {RegisterComponent} from "./register/register.component";
+import {RegisterComponent} from "./login/register/register.component";
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import {RecipeDisplayComponent} from "./recipe-display/recipe-display.component";
 import {ContactusComponent} from "./contactus/contactus.component";
 import {HomepageComponent} from "./homepage/homepage.component";
-import { AuthGuard } from './auth.guard';
-import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
+import { ForgotPasswordComponent } from "./login/forgot-password/forgot-password.component";
+import {UserProfileComponent} from "./user-profile/user-profile.component";
 
 const routes: Routes = [
-  // uncomment this
-  // { path: '', component: HomepageComponent, canActivate: [AuthGuard] },
-  // { path: 'login', component: LoginComponent },
-
-  // // otherwise redirect to home
-  // { path: '**', redirectTo: '' }
-
-  // if above part uncommented then comment below part
   {
     path: '',
     component: RecipeDisplayComponent
@@ -63,6 +55,10 @@ const routes: Routes = [
   {
     path: 'search',
     component: RecipeDisplayComponent
+  },
+  {
+    path: 'profile',
+    component: UserProfileComponent
   }
 ];
 

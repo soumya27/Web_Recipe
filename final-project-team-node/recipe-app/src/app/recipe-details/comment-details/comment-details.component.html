@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Leave a Review</h2>
+  <app-user-comments></app-user-comments>
+  <div *ngIf="recipe.userComments !== null">
+    <h3>Previous Comments</h3>
+    <div *ngFor="let comments of recipe.userComments">
+
+      <div class="card card-layout">
+        <div class="card-header">
+          <h5 class="card-title">
+            {{comments.name | uppercase}}
+          </h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            {{comments.comment}}
+          </p>
+        </div>
+        <div class="card-footer">
+          <h6>
+            Rating: {{comments.rating}}
+          </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

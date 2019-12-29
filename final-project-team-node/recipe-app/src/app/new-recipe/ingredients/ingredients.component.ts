@@ -1,37 +1,31 @@
-import { Component, OnInit} from '@angular/core';
+import { Component} from '@angular/core';
+import {ErrorStateMatcher} from "@angular/material/core";
+import {FormControl, FormGroupDirective, NgForm, Validators} from "@angular/forms";
+
+/** Error when invalid control is dirty, touched, or submitted. */
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'app-ingredients',
   templateUrl: './ingredients.component.html',
   styleUrls: ['./ingredients.component.scss']
 })
-export class IngredientsComponent implements OnInit {
-  items = [];
-  listIngredientName: any = [];
+export class IngredientsComponent {
 
-  constructor() { }
+  name='';
+  amount='';
 
-  ngOnInit() {
-  }
+  formControl= new FormControl('', [Validators.required]);
+  matcher = new MyErrorStateMatcher();
 
-  onDelete(i) {
-    console.log("Inside onDelete()");
-    this.items.splice(i,1);
-  }
-
-  public loadMyChildComponent() {
-    this.items = [...this.items, this.items.length]
-    console.log(this.items);
-  }
-
-  onAdd(i) {
-    console.log(i);
-    let idName = "name"+i;
-    let idAmount = "amount"+i;
-    console.log('id',idName);
-    let ingredientName = (<HTMLInputElement>document.getElementById(idName)).value;
-    console.log(ingredientName);
-    let amount = (<HTMLInputElement>document.getElementById(idAmount)).value;
-    console.log(amount);
+  onDelete($event){
+    const target: any = $event.target;
+    const parentNode: HTMLElement = target.parentNode;
+    parentNode.remove();
   }
 }

@@ -8,36 +8,21 @@
   border: 1px solid black;
 }
 
-.login-form {
-  width: 100%;
-}
-
 .login-full-width {
   font-size: large;
   width: 100%;
 }
 
-input {
-  margin-top: 5px;
-}
-
 .login-register {
-  padding-top: 10px;
-
+  margin-top: 3%;
   button {
-    float: left;
-    font-size: larger;
+    font-size: large;
     font-weight: normal;
+    float : left;
   }
-  .register-link {
-    font-size: larger;
+  a {
+    font-size: large;
     font-weight: normal;
     float: right;
   }
-}
-
-.forgot {
-  font-size: larger;
-  padding-top: 60px;
-  display: block;
 }

@@ -1,126 +1,52 @@
-<!--<div class="container-fluid">-->
-<!--    <div class="bannerAdd img-responsive">-->
-<!--        <div class="container">-->
-<!--            <button class="btn btn-primary" (click)="backBtn()">Back</button>-->
-<!--            <div class="recipe-type">-->
-<!--                <div class="row">-->
-<!--                    <div class=col-sm-2>-->
-<!--                        <i class="fas fa-list fa-lg"></i>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-8">-->
-<!--                        <b>CATEGORY</b> <br />-->
-<!--                        {{recipe.category}}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="row">-->
-<!--                    <div class=col-sm-2>-->
-<!--                        <i class="fas fa-fire fa-lg"></i>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-8">-->
-<!--                        <b>CALORIES</b> <br />-->
-<!--                        {{recipe.calories}}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="row">-->
-<!--                    <div class=col-sm-2>-->
-<!--                        <i class="fas fa-stopwatch fa-lg"></i>-->
-<!--                    </div>-->
-<!--                    <div class="col-sm-8">-->
-<!--                        <b>TIME</b> <br />-->
-<!--                        {{recipe.time}}-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--<div class="container details">-->
-<!--    <div class="row">-->
-<!--        <div class="col-sm-5">-->
-<!--            <h3>{{recipe.title | uppercase}}</h3>-->
-<!--            <table class="table">-->
-<!--                <thead>-->
-<!--                    <tr>-->
-<!--                        <th>Ingredients</th>-->
-<!--                    </tr>-->
-<!--                </thead>-->
-<!--                <tbody>-->
-<!--                    <tr *ngFor="let data of recipe.ingredients">-->
-<!--                        <td><strong>{{data.amount}} </strong>{{data.name}}</td>-->
-<!--                    </tr>-->
-<!--                </tbody>-->
-<!--            </table>-->
-<!--            Can't cook at the moment? <br />-->
-<!--            Find similar items at nearby restaurants.-->
-<!--            <button class="btn btn-primary" (click)="getRestaurantList(recipe.category)">View Restaurants</button>-->
-<!--        </div>-->
-<!--        <div class="col-sm-7 instruction">-->
-<!--            <div class="col-sm-12">-->
-<!--                <h3>Instructions</h3>-->
-<!--                <div class="row">-->
-<!--                    <div class="col-sm-12 recipeImage">-->
-<!--                        <img class="img-responsive" [attr.src]="recipe.image" />-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div *ngIf="recipe.steps.length > 0">-->
-<!--                            <div class="col-sm-12" *ngFor="let step of recipe.steps; let i = index">-->
-<!--                                <p><strong>Step {{i+1}}</strong>{{step.steps}}</p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--    &lt;!&ndash; <div class="description">-->
-<!--            <p>-->
-<!--                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown-->
-<!--                printer took a-->
-<!--                galley of type and scrambled it to make a type specimen book. It has survived not only five-->
-<!--                centuries-->
-<!--            </p>-->
-<!--            <p class="position">John Doe, CEO Founder, Company</p>-->
-
-<!--        </div> &ndash;&gt;-->
-<!--    <div class="row description">-->
-<!--        <p class="position">Author: {{recipe.author}}</p>-->
-<!--        &lt;!&ndash; <span>Author: {{recipe.author}}</span> &ndash;&gt;-->
-<!--    </div>-->
-
-<!--</div>-->
-
-<!--<div class="container-fluid commentsSection">-->
-<!--    <div class="container">-->
-<!--        <h2>Leave a Review</h2>-->
-<!--        <app-user-comments></app-user-comments>-->
-
-<!--        <div *ngIf="recipe.userComments !== null">-->
-<!--            <h3>Previous Comments</h3>-->
-<!--            <div *ngFor="let item of recipe.userComments">-->
-
-<!--                <div class="card card-layout">-->
-<!--                    <div class="card-header">-->
-<!--                        <h5 class="card-title">-->
-<!--                            {{item.name | uppercase}}-->
-<!--                        </h5>-->
-<!--                    </div>-->
-<!--                    <div class="card-body">-->
-<!--                        <p class="card-text">-->
-<!--                            {{item.comment}}-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                    <div class="card-footer">-->
-<!--                        <h6>-->
-<!--                            Rating: {{item.rating}}-->
-<!--                        </h6>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--    </div>-->
-
-<!--</div>-->
+<i class="fas fa-angle-left fa-4x" (click)="backBtn()"></i>
+<div class="container-fluid">
+    <app-banner [recipe]="recipe"></app-banner>
+</div>
+<div class="container details">
+    <div class="row">
+        <div class="col-sm-5">
+            <h3>{{recipe.title | uppercase}}</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Ingredients</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of recipe.ingredients">
+                        <td><strong>{{data.amount}} </strong>{{data.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="find">
+              <span> Can't cook at the moment? <br /></span>
+              <span>Find similar items at nearby restaurants.<br /></span>
+              <button mat-raised-button (click)="getRestaurantList(recipe.category)">View Restaurants</button>
+            </div>
+        </div>
+        <div class="col-sm-7 instruction">
+            <div class="col-sm-12">
+                <h3>Instructions</h3>
+                <div class="row">
+                    <div class="col-sm-12 recipeImage">
+                        <img class="img-responsive" [attr.src]="recipe.image"  alt="imageofRecipe"/>
+                    </div>
+                    <div class="row">
+                        <div *ngIf="recipe.steps.length > 0">
+                            <div class="col-sm-12" *ngFor="let step of recipe.steps; let i = index">
+                                <p><strong>Step {{i+1}}</strong>{{step.steps}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row description">
+        <i class="fas fa-user-circle fa-3x"></i>
+        <p class="position">Author: {{recipe.author}}</p>
+    </div>
+</div>
+<div class="container-fluid commentsSection">
+    <app-comment-details [recipe]="recipe"></app-comment-details>
+</div>

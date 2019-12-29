@@ -1,0 +1,23 @@
+<div class="container">
+  <form class="login-form" >
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="First Name" required>
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Last Name" required>
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="Email" required>
+    </mat-form-field>
+    <mat-form-field class="login-full-width">
+      <mat-select placeholder="Gender" required >
+        <mat-option class="option" value="male">Male</mat-option>
+        <mat-option class="option" value="female">Female</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="login-register">
+      <button class="register-link" mat-raised-button >Register</button>
+      <a (click)="openLogin()" mat-raised-button>Login</a>
+    </div>
+  </form>
+</div>
