@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-import { AuthenticationService} from '../services/auth.service';
-import { first } from 'rxjs/operators';
 import { User } from '../models/user.model';
-import { from } from 'rxjs';
-import { JwtInterceptor } from '../jwt.interceptor';
 import { JwtService } from '../services/jwt.service';
 
 @Component({
@@ -14,9 +10,9 @@ import { JwtService } from '../services/jwt.service';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  // loading = false; 
+  // loading = false;
   users: User[];
-  
+
   constructor(private router : Router, private userService: UserService, private jwtservice: JwtService) { }
 
   // this.users has error
@@ -42,7 +38,7 @@ export class HomepageComponent implements OnInit {
    * else to the login page
    */
   CreateRecipe(){
-    console.log(this.jwtservice.getFromLocal("token"))
+    console.log(this.jwtservice.getFromLocal("token"));
     if(this.jwtservice.getFromLocal("token") !== null){
       this.onSwitchMode();
     }else{

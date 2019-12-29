@@ -14,9 +14,12 @@
         Password is required
       </mat-error>
     </mat-form-field>
-    <button id="submitButton" mat-raised-button>Login</button>
-
-    <a mat-raised-button >Forgot Password</a>
-    <a mat-raised-button >Register</a>
+    <div class="login-register">
+      <button id="submitButton" mat-raised-button>Login</button>
+      <a class="register-link" (click)="onRegister()" mat-raised-button >Register</a>
+    </div>
+    <div class="forgot">
+      <a href="#" class="forgot-link" >Forgot Password</a>
+    </div>
   </form>
 </div>

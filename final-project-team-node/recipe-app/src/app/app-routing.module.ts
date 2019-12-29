@@ -8,18 +8,9 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import {RecipeDisplayComponent} from "./recipe-display/recipe-display.component";
 import {ContactusComponent} from "./contactus/contactus.component";
 import {HomepageComponent} from "./homepage/homepage.component";
-import { AuthGuard } from './auth.guard';
 import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
 
 const routes: Routes = [
-  // uncomment this
-  // { path: '', component: HomepageComponent, canActivate: [AuthGuard] },
-  // { path: 'login', component: LoginComponent },
-
-  // // otherwise redirect to home
-  // { path: '**', redirectTo: '' }
-
-  // if above part uncommented then comment below part
   {
     path: '',
     component: RecipeDisplayComponent
